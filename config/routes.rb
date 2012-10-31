@@ -14,6 +14,10 @@ Rottenpotatoes::Application.routes.draw do
   #   resources :products
   resources :movies
 
+
+  post '/movies/find_similar_movies'
+  # match '/movies/:id/directors' => 'movies#same_directors', :as => 'same_directors'
+
   # Sample resource route with options:
   #   resources :products do
   #     member do

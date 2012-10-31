@@ -1,8 +1,10 @@
 Given /^the following movies exist:$/ do |table|
   # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.hashes.each do |m|
+  	Movie.create!(m)
+  end
 end
 
 Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+	Movie.find_by_title(arg1) == Movie.find_by_director(arg2)
 end
